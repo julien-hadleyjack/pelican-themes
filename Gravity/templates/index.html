@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content_title %}{% endblock %}
+{% block content %}
+{% if articles %}
+
+<div class="home">
+    {% for article in articles_page.object_list %}
+    <div class="post postContent">
+
+    <div  class="postDate"><time datetime="{{ article.date }}" itemprop="datePublished">{{ article.date|strftime('%B %-d, %Y') }}</time>
+    </div>
+    <br>
+
+    <div class="postTitle">
+    <a class='postLink' href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+    </div>
+
+    <div class="postExt">
+    {{ article.summary }}
+    </div>
+    
+    </div>
+    {% endfor %}
+</div>
+
+{% endif %}
+{% endblock content %}

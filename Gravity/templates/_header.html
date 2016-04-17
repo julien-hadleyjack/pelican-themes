@@ -1,0 +1,40 @@
+<div class="wrapper">
+	<center>
+	<a href="{{ SITEURL }}/index.html"><div class="site-title">{{ SITENAME }}</div></a>
+	</center>
+</div>
+
+{% if SITESUBTITLE %}
+<div class="wrapper site-description">
+	<center>{{ SITESUBTITLE }} </center>
+</div>
+{% endif %}
+
+<center>
+<div class="wrapper">
+	<div class="trigger site-navigation">
+		
+		<a class="page-link" href="{{ SITEURL }}/index.html">HOME</a>
+		<span class="exclamationMark">/</span>
+
+		{% if DISPLAY_PAGES_ON_MENU %}
+		{% for pg in PAGES %}
+		<a class="page-link" href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a>
+		{% if pg.url != PAGES[-1].url or DISPLAY_CATEGORIES_ON_MENU %}
+		<span class="exclamationMark">/</span>
+		{% endif %}
+		{% endfor %}
+		{% endif %}
+		
+		{% if DISPLAY_CATEGORIES_ON_MENU %}
+		{% for cat, _ in categories %}
+		<a class="page-link" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
+		{% if cat.url != categories[-1][0].url %}
+		<span class="exclamationMark">/</span>
+		{% endif %}
+		{% endfor %}
+		{% endif %}
+
+	</div>
+</div>
+</center>

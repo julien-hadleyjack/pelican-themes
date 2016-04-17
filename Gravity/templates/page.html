@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block content %}
+<article class="post">
+
+	{%if page.tagline%}
+	<div class="tagline">
+  	<span class="post-title">{{page.title}}</span>
+  	<span class="page-tagline"><em>{{page.tagline}}</em></span>
+  	</div>
+	{% else %}
+	<header class="post-header">
+	<h1 class="post-title">{{ page.title }}</h1>
+	</header>
+	{% endif %}
+
+	<div class="post-content">
+		{% import '_translations.html' as translations with context %}
+		{{ translations.translations_for(page) }}
+		{{ page.content }}
+	</div>
+
+</article>
+
+{% endblock %}

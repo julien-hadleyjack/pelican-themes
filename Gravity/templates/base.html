@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+
+{% include '_head.html' %}
+
+<body>
+
+{% include '_header.html' %}
+
+<div class="page-content">
+    <div class="wrapper">
+    {% block content %}
+    {% endblock %}
+    </div>
+</div>
+
+{% include '_footer.html' %}
+{% include '_analytics.html' %}
+
+
+</body>
+
+</html>

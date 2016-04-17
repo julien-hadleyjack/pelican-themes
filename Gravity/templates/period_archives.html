@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<section id="content" class="body">
+<h1>Archives for {{ period | reverse | join(' ') }}</h1>
+
+<dl>
+{% for article in dates %}
+    <div class="post postContent">
+
+    <div  class="postDate"><time datetime="{{ article.date }}" itemprop="datePublished">{{ article.date|strftime('%B %-d, %Y') }}</time>
+    </div>
+    <br>
+
+    <div class="postTitle">
+    <a class='postLink' href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+    </div>
+
+    <div class="postExt">
+    {{ article.summary }}
+    </div>
+    
+    </div>
+{% endfor %}
+</dl>
+</section>
+{% endblock %}

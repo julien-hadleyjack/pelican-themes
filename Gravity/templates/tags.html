@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}{{ SITENAME }} - Tags{% endblock %}
+
+{% block content %}
+
+<section id="content" class="body">
+	<header class="post-header">
+	    <h1 class="post-title" itemprop="name headline">
+	    <a class="post-title-link"  href="{{ SITEURL }}/tags.html" title="Permalink to Tags for {{ SITENAME }}">Tags for {{ SITENAME }}</a></h1>
+	</header>
+
+    <ul>
+    {% for tag, articles in tags|sort %}
+        <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</li>
+    {% endfor %}
+    </ul>
+</section>
+
+{% endblock %}
