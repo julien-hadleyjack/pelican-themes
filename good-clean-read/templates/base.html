@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+
+{% include '_head.html' %}
+
+<body>
+
+<article>
+	<div class="container">
+		<h1><a href="./">{{ SITENAME }}</a></h1>
+		{% if SITESUBTITLE %}
+	    <h2>{{ SITESUBTITLE }}</h2>
+	    {% endif %}
+		{% block content %}
+		{% endblock %}
+	</div>
+</article>
+
+{% include '_footer.html' %}
+{% include '_analytics.html' %}
+
+
+</body>
+
+</html>
