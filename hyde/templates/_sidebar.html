@@ -1,0 +1,37 @@
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="{{ SITEURL }}/">
+          {{ SITENAME }}
+        </a>
+      </h1>
+      {% if SITESUBTITLE %}
+      <p class="lead">{{ SITESUBTITLE }}</p>
+      {% endif %}
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item{% if page_name == "index" %} active{% endif %}" href="{{ SITEURL }}/">Home</a>
+
+		{% if DISPLAY_PAGES_ON_MENU %}
+		{% for pg in PAGES %}
+		<a class="sidebar-nav-item{% if output_file == pg.url %} active{% endif %}" href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}
+		</a>
+		{% endfor %}
+		{% endif %}
+
+		{% if DISPLAY_CATEGORIES_ON_MENU %}
+		{% for cat, _ in categories %}
+		<a class="sidebar-nav-item{% if output_file == cat.url %} active{% endif %}" href="{{ SITEURL }}/{{ cat.url }}">
+		{{ cat.title }}
+		</a>
+		{% endfor %}
+		{% endif %}
+    </nav>
+
+    {% if COPYRIGHT %}
+    <p>&copy; {{ COPYRIGHT }}. All rights reserved.</p>
+    {% endif %}
+  </div>
+</div>

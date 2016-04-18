@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}{{ SITENAME }} - Archives{% endblock %}
+{% block content %}
+<div class="page">
+    <h1 class="page-title">Archives for {{ SITENAME }}</h1>
+
+<div class="posts">
+  {% for article in dates %}
+  <div class="post">
+    <h2 class="post-title">
+      <a href="{{ article.url }}">
+        {{ article.title }}
+      </a>
+    </h2>
+
+    <span class="post-date">{{ article.local_date }}</span>
+
+    {{ article.summary }}
+  </div>
+  {% endfor %}
+</div>
+
+{% include '_pagination.html' %}
+
+</div>
+{% endblock %}

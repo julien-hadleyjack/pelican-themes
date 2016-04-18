@@ -13,7 +13,7 @@
 
 <section class="post-list">
 <div class="container">
-    {% for tag, articles in tags|sort(True) %}
+    {% for tag, articles in tags|sort %}
         <div class="post-preview">
             <span class="post-title alignable pull-left">
                 <a class="post-link underline" href="{{ SITEURL }}/{{ tag.url }}">
