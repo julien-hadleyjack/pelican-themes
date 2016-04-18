@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block title %}{{ SITENAME }} - {{ tag }}{% endblock %}
+
+{% block content %}
+<h1 class="page-title">Tag: {{ tag }}</h1>
+
+{% if tag in TAG_DESCRIPTION %}
+<p class="message">{{ TAG_DESCRIPTION[tag] }}</p>
+{% endif %}
+<hr/>
+{{ super() }}
+{% endblock content %}

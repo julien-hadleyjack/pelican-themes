@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content_title %}{% endblock %}
+{% block content %}
+
+</ul>
+{% for group in articles_page.object_list|groupby('date.year') %}
+<h2 id="y{{ group.list[0].date|strftime('%Y') }}" class="page-title">{{ group.list[0].date|strftime('%Y') }}</h2>
+<ul class="related-posts">
+{% for article in group.list %}
+<li>
+    <h4>
+      <a href="{{ SITEURL }}/{{ article.url }}">
+        <span>{{ article.title }}</span>
+        <small>{{ article.date|strftime("%m/%d") }}</small>
+      </a>
+    </h4>
+  </li>
+{% endfor %}
+</ul><hr/>
+{% endfor %}
+
+{% endblock content %}

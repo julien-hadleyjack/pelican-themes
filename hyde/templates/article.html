@@ -4,7 +4,7 @@
 <div class="post">
   <h1 class="post-title">{{ article.title }}</h1>
 
-  <span class="post-date">{{ locale_date }}</span>
+  <span class="post-date">{{ article.locale_date }}</span>
   {% import '_translations.html' as translations with context %}
   {{ translations.translations_for(article) }}
   {{ article.content }}

@@ -1,0 +1,45 @@
+<head>
+    <meta charset="utf-8">
+
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700|PT+Serif:400,400italic,700,700italic" type="text/css">
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/poole.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/hyde.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/jekyll-github.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+
+    {% if FEED_ALL_ATOM %}
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+    {% endif %}
+    {% if FEED_ALL_RSS %}
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+    {% endif %}
+
+    {% if not SITE_COLOR %}
+    {% set SITE_COLOR = "red" %}
+    {% endif %}
+
+    <style>
+    .content a,
+    .related-posts li a:hover {
+      color: {{ SITE_COLOR }};
+    }
+    ::selection {
+      color: #fff;
+      background: {{ SITE_COLOR }};
+    }
+    ::-moz-selection {
+      color: #fff;
+      background: {{ SITE_COLOR }};
+    }
+  </style>
+</head>

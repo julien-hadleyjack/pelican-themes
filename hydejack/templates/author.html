@@ -1,0 +1,8 @@
+{% extends "index.html" %}
+{% block title %}{{ SITENAME }} - {{ author }}{% endblock %}
+
+{% block content %}
+<h1 class="page-title">Author: {{ tag }}</h1>
+<hr/>
+{{ super() }}
+{% endblock content %}

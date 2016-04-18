@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title|striptags }}{% endblock %}
+{% block content %}
+<article class="post">
+  <h1 class="post-title">{{ article.title }}</h1>
+
+  <div class="post-date">
+  <time datetime="{{ article.date }}">{{ article.date|strftime("%m/%d/%y") }}</time>
+  {% if article.tags %}
+  on 
+  {% for tag in article.tags %}
+  <span>
+  <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag|escape }}</a>{%if tag != article.tags[-1] %}, {% endif %}
+  </span>
+  {% endfor %}
+  {% endif %}
+  </div>
+  <hr />
+  {% import '_translations.html' as translations with context %}
+  {{ translations.translations_for(article) }}
+  {{ article.content }}
+</article>
+
+
+{#
+{% if site.author.about %}
+<aside class="author">
+  <h2 class="aside-title">About</h2>
+
+  {% if site.author.photo %}
+  <img class="me" src="{{ site.author.photo }}" alt="{{ site.author.name }}"/>
+  {% endif %}
+
+  {{ site.author.about | markdownify }}
+</aside>
+{% endif %}
+
+<aside class="related">
+  <h2 class="aside-title">Related Posts</h2>
+  <ul class="related-posts">
+    {% assign plusone = false %}
+    {% assign tag_name = page.tags[0] %}
+    {% for post in site.tags[tag_name] limit:4 %}
+      {% if post.url == page.url %}
+        {% assign plusone = true %}
+        {% continue %}
+      {% endif %}
+      {% if forloop.index < 4 or plusone == true %}
+        <li>
+          <h4>
+            <a href="{{ post.url | prepend:site.baseurl }}">
+              <span>{{ post.title }}</span>
+              <small>{{ post.date | date: "%m/%d/%y" }}</small>
+            </a>
+          </h4>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</aside>
+#}
+{% endblock %}

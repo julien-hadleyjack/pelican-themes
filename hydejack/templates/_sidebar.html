@@ -1,0 +1,39 @@
+<div   id="_backdrop"></div>
+<a     id="_menu" href="#_sidebar">☰</a>
+<aside id="_sidebar" class="sidebar" {% if SIDEBAR_IMAGE %}style="background-image:url('{{ SITEURL }}/{{ SIDEBAR_IMAGE }}')"{% endif %}>
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
+      {% if SITESUBTITLE %}
+      {{ SITESUBTITLE }}
+      {% endif %}
+    </div>
+
+    <nav class="sidebar-nav">
+      {% if DISPLAY_PAGES_ON_MENU %}
+      {% for pg in PAGES %}
+      <a class="sidebar-nav-item{% if output_file == pg.url %} active{% endif %}" href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}
+      </a>
+      {% endfor %}
+      {% endif %}
+
+      {% if DISPLAY_CATEGORIES_ON_MENU %}
+      {% for cat, _ in categories %}
+      <a class="sidebar-nav-item{% if output_file == cat.url %} active{% endif %}" href="{{ SITEURL }}/{{ cat.url }}">
+      {{ cat.title }}
+      </a>
+      {% endfor %}
+      {% endif %}
+    </nav>
+
+    <div class="sidebar-social">
+      {% if GITHUB_USER %}
+        <a href="https://github.com/{{ GITHUB_USER }}"><span class="icon-icon-github"></span></a>
+      {% endif %}
+
+      {% if TWITTER_USER %}
+        <a href="https://twitter.com/{{ TWITTER_USER }}"><span class="icon-icon-twitter"></span></a>
+      {% endif %}
+    </div>
+  </div>
+</aside>
