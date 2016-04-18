@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content_title %}{% endblock %}
+{% block content %}
+
+{% if PROFILE_PICTURE and SHORT_BIO %}
+    <div id="intro">
+        <div class="container">
+            {% if PROFILE_PICTURE %}
+                <img id="intro-img" src="{{ SITEURL }}/{{ PROFILE_PICTURE }}">
+            {% endif %}
+            <h2>{{ SITENAME }}</h2>
+            <p style="margin-top: 30px;">
+                {{ SHORT_BIO }}
+            </p>
+        </div>
+    </div>
+{% else %}
+    <section class="intro">
+        <div class="container">
+            <h2 class="site-name">
+            {{ SITENAME }}
+            </h2>
+        </div>
+    </section>
+{% endif %}
+
+{% if articles %}
+<section class="post-list">
+    <div class="container">
+        {% for article in articles_page.object_list %}
+            <div class="post-preview">
+                <span class="post-title alignable pull-left">
+                    <a class="post-link underline" href="{{ SITEURL }}/{{ article.url }}">
+                        {{ article.title }}
+                    </a>
+                </span>
+                <span class="post-time alignable pull-right">
+                    <time>{{ article.date|strftime('%B %d, %Y ') }}</time>
+                </span>
+                <div style="clear:both"></div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+{% endblock content %}

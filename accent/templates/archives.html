@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="intro">
+    <div class="container">
+        <h2 class="site-name">
+        Archives for {{ SITENAME }}
+        </h2>
+    </div>
+</section>
+
+<section class="post-list">
+<div class="container">
+    {% for article in dates %}
+        <div class="post-preview">
+            <span class="post-title alignable pull-left">
+                <a class="post-link underline" href="{{ SITEURL }}/{{ article.url }}">
+                    {{ article.title }}
+                </a>
+            </span>
+            <span class="post-time alignable pull-right">
+                <time>{{ article.date|strftime('%B %d, %Y ') }}</time>
+            </span>
+            <div style="clear:both"></div>
+        </div>
+    {% endfor %}
+</div>
+</section>
+{% endblock %}

@@ -1,0 +1,43 @@
+<footer>
+    
+    {#
+    {% include paginate.html %}
+    {% include _suggestion.html %}
+    #}
+
+    <hr />
+    <div class="user-footer">
+        <div class="copyright alignable pull-left">
+            {% if COPYRIGHT %}
+                <h2> &copy;{{ COPYRIGHT }}</h2>
+            {% else %}
+                <h2> &copy;{{ SITENAME }}</h2>
+            {% endif %}
+        </div>
+
+        <div class="alignable pull-right">
+            <a target="_blank" href="https://twitter.com/{{ TWITTER_USERNAME }}" class="button">
+                @{{ TWITTER_USERNAME }}
+            </a>
+            <a href="mailto:{{ EMAIL_ADDRESS }}" class="button">
+                mail
+            </a>
+            <a target="_blank" href="{{ SITEURL }}/feed.xml" class="button">
+                rss
+            </a>
+        </div>
+
+    </div>
+
+    <div style="clear:both"></div>
+    <hr />
+    <div class="theme-footer">
+        <p class="alignable pull-left" style="display: inline-block">
+            Built with <a href="http://jekyllrb.com/" class="different-highlight underline">Jekyll</a> and <a href="http://ankitsultana.me/accent/" class="different-highlight underline">accent</a>
+        </p>
+    </div>
+</footer>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/rrssb.min.js"></script>
+

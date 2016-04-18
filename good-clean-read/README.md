@@ -21,3 +21,7 @@ DAY_ARCHIVE_SAVE_AS = ""
 ```
 
 Article title is shown as `h3` heading. For the content you should use smaller headings.
+
+## TODO
+
+* Add HTML anchor to article titles
