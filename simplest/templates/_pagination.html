@@ -1,0 +1,23 @@
+{% if dates_next_page or dates_previous_page %}
+<nav class="pagination" role="pagination">
+<ul>
+
+{% if dates_previous_page %}
+    <li><a class="prev" href="{{ dates_previous_page.url }}" title="Articles new">&laquo; Prev</a></li>
+{% else %}
+    <li><span class="prev disabled">&laquo; Prev</span></li>
+{% endif %}
+
+{#
+<li><span class="page-number">Page {{paginator.page}} of {{paginator.total_pages}}</span></li>
+#}
+
+{% if dates_next_page %}
+    <li><a class="next" href="{{ dates_next_page.url }}" title="Articles old">Next &raquo;</a></li>
+{% else %}
+    <li><span class="next disabled">Next &raquo;</span></li>
+{% endif %}
+  
+</ul>
+</nav>
+{% endif %}

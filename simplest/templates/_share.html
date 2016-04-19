@@ -1,0 +1,9 @@
+
+<aside class="share">
+
+  <h4>Share this.</h4>
+  <a href="http://twitter.com/share?text={{ article.title|urlencode }}&amp;url={{ SITEURL|urlencode }}%2F{{ article.url|urlencode }}&amp;hashtags=blog{% if TWITTER_USERNAME %}&amp;via={{ TWITTER_USERNAME }}{% endif %}"
+  onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">Twitter</a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL|urlencode }}%2F{{ article.url|urlencode }}" onclick="window.open(this.href, 'facebook-share', 'width=550,height=235');return false;">Facebook</a>
+
+</aside>

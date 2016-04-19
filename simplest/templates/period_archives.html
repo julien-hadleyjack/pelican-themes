@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="container page-header">
+    <h1 class="page-title">Archives for {{ period | reverse | join(' ') }}</h1>
+</header>
+
+<section class="post-list">
+  <div class="container">
+
+    {% for article in dates %}
+      <article class="post-item">
+        <p>
+        <span class="post-meta">{{ article.date|strftime("%b %-d, %Y") }}</span>  — <strong><a class="post-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></strong> — <span> {{ article.summary }}</span>{% if article.summary != article.content %}<a class="post-link readmore" href="{{ SITEURL }}/{{ article.url }}">Read more</a>{% endif %}
+        </p>
+      </article>
+    {% endfor %}
+  </div>
+
+  <div class="container">
+    {% include '_pagination.html' %}
+  </div>
+</section>
+{% endblock %}

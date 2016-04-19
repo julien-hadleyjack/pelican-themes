@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content_title %}{% endblock %}
+
+{% block content %}
+
+{% if SITESUBTITLE %}
+<section class="intro">
+  <div class="container">
+    <p class="lead">{{ SITESUBTITLE }}</p>
+  </div>
+</section>
+{% endif %}
+
+<section class="post-list">
+  <div class="container">
+
+    {% if SUBHEADER is not none %}
+    <h2>{{ SUBHEADER|default("Writing...") }}</h2>
+    {% endif %}
+
+    {% for article in articles_page.object_list %}
+      <article class="post-item">
+        <p>
+        <span class="post-meta">{{ article.date|strftime("%b %-d, %Y") }}</span>  — <strong><a class="post-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></strong> — <span> {{ article.summary }}</span>{% if article.summary != article.content %}<a class="post-link readmore" href="{{ SITEURL }}/{{ article.url }}">Read more</a>{% endif %}
+        </p>
+      </article>
+    {% endfor %}
+  </div>
+
+  <div class="container">
+    {% include '_pagination.html' %}
+  </div>
+</section>
+
+{% endblock content %}

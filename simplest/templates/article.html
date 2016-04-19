@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title|striptags }}{% endblock %}
+
+{% block content %}
+<article class="post container" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ article.title }}</h1>
+    <p class="post-meta"><time datetime="{{ article.date }}" itemprop="datePublished">{{ article.date|strftime("%b %-d, %Y") }}</time>{% if article.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ article.author }}</span></span>{% endif %}</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {% import '_translations.html' as translations with context %}
+    {{ translations.translations_for(article) }}
+    {{ article.content }}
+
+    {% if SHARE %}
+    {% include '_share.html' %}
+    {% endif %}
+  </div>
+
+</article>
+
+{% if DISQUS_SITENAME %}
+{% include '_disqus_comments.html' %}
+{% endif %}
+
+{% endblock %}
