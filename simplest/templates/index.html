@@ -21,7 +21,7 @@
     {% for article in articles_page.object_list %}
       <article class="post-item">
         <p>
-        <span class="post-meta">{{ article.date|strftime("%b %-d, %Y") }}</span>  — <strong><a class="post-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></strong> — <span> {{ article.summary }}</span>{% if article.summary != article.content %}<a class="post-link readmore" href="{{ SITEURL }}/{{ article.url }}">Read more</a>{% endif %}
+        <span class="post-meta">{{ article.date|strftime("%b %-d, %Y") }}</span>  — <strong><a class="post-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></strong> — <span> {{ article.summary|striptags }}</span>{% if article.summary != article.content %} <a class="post-link readmore" href="{{ SITEURL }}/{{ article.url }}">Read more</a>{% endif %}
         </p>
       </article>
     {% endfor %}

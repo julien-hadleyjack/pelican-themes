@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+
+{% include '_head.html' %}
+
+<body>
+
+{% include '_header.html' %}
+
+<main>
+{% block content %}
+{% endblock %}
+</main>
+
+<aside class="note"></aside>
+<script async src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/footnotes.js"></script>
+
+{% include '_analytics.html' %}
+
+
+</body>
+
+</html>
