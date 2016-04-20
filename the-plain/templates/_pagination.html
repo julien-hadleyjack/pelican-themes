@@ -1,0 +1,9 @@
+<div class="navigation">
+    {% if dates_next_page %}
+    <a class="navigation-next" href="{{ dates_next_page.url }}">Older</a>
+    {% endif %}
+
+    {% if dates_previous_page %}
+    <a class="navigation-previous" href="{{ dates_previous_page.url }}">Newer</a>
+    {% endif %}
+</div>
