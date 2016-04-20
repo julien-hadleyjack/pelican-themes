@@ -1,22 +1,2 @@
-{% extends "base.html" %}
-{% block content %}
-<article>
-<h1 class="title">Archives for {{ period | reverse | join(' ') }}</h1>
-<div class="divider"></div>
-</article>
-
-<section>
-    <ul>
-        {% for article in dates %}
-        <li>
-            <div class="post-date">
-                <span>{{ article.date|strftime("%b %d, %Y") }}</span>
-            </div>
-            <div class="title">
-                <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
-</section>
-{% endblock %}
+{% extends "archives.html" %}
+{% block content_title %}Archives for {{ period | reverse | join(' ') }}{% endblock %}

@@ -16,14 +16,14 @@
 
 		{% if DISPLAY_PAGES_ON_MENU %}
 		{% for pg in PAGES %}
-		<a class="sidebar-nav-item{% if output_file == pg.url %} active{% endif %}" href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}
+		<a class="sidebar-nav-item{% if page == pg %} active{% endif %}" href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}
 		</a>
 		{% endfor %}
 		{% endif %}
 
 		{% if DISPLAY_CATEGORIES_ON_MENU %}
 		{% for cat, _ in categories %}
-		<a class="sidebar-nav-item{% if output_file == cat.url %} active{% endif %}" href="{{ SITEURL }}/{{ cat.url }}">
+		<a class="sidebar-nav-item{% if page == cat %} active{% endif %}" href="{{ SITEURL }}/{{ cat.url }}">
 		{{ cat.title }}
 		</a>
 		{% endfor %}

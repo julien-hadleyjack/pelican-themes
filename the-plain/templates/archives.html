@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <article>
-<h1 class="title">Archives for {{ SITENAME }}</h1>
+<h1 class="title">{% block content_title %}Archives for {{ SITENAME }}{% endblock %}</h1>
 <div class="divider"></div>
 </article>
 
