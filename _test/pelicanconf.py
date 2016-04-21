@@ -5,26 +5,23 @@ import os
 
 THEME = "../" + os.environ.get("PELICAN_THEME", "the-plain")
 
-AUTHOR = 'Alexis Métaireau'
-SITENAME = "Alexis' log"
-SITEURL = 'http://blog.notmyidea.org'
+AUTHOR = 'Julien Hadley Jack'
+SITENAME = "Theme Demo"
+SITEURL = ''
 SITESUBTITLE = "This is some sample text to be shown. It is a bit longer to showcase line breaks."
-
 
 TIMEZONE = "Europe/Paris"
 
-# can be useful in development, but set to False when you're ready to publish
-RELATIVE_URLS = True
-
-GITHUB_URL = 'http://github.com/ametaireau/'
-DISQUS_SITENAME = "blog-notmyidea"
 REVERSE_CATEGORY_ORDER = True
-LOCALE = "C"
-DEFAULT_PAGINATION = 4
-DEFAULT_DATE = (2012, 3, 2, 14, 1, 1)
+DEFAULT_LANG = 'en'
 
-FEED_ALL_RSS = 'feeds/all.rss.xml'
-CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
+DEFAULT_PAGINATION = 4
+
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
+TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
 
 LINKS = (('Biologeek', 'http://biologeek.org'),
          ('Filyb', "http://filyb.info/"),
@@ -32,7 +29,6 @@ LINKS = (('Biologeek', 'http://biologeek.org'),
          ('N1k0', "http://prendreuncafe.com/blog/"),
          ('Tarek Ziadé', "http://ziade.org/blog"),
          ('Zubin Mithra', "http://zubin71.wordpress.com/"),)
-
 
 # Social widget
 SOCIAL = (
@@ -46,9 +42,6 @@ SOCIAL = (
   ('github', 'http://github.com/ametaireau')
 )
 
-# global metadata to all the contents
-DEFAULT_METADATA = {'yeah': 'it is'}
-
 # path-specific metadata
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
@@ -56,24 +49,13 @@ EXTRA_PATH_METADATA = {
 
 # static paths will be copied without parsing their contents
 STATIC_PATHS = [
-    'pictures',
+    'images',
     'extra/robots.txt',
     ]
 
-# custom page generated with a jinja2 template
-TEMPLATE_PAGES = {'pages/jinja2_template.html': 'jinja2_template.html'}
-
-# code blocks with line numbers
-PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
-
-# foobar will not be used, because it's not in caps. All configuration keys
-# have to be in caps
-foobar = "barbaz"
 
 
-
-
-TAG_DESCRIPTION = {"python": "This is test description"}
+TAG_DESCRIPTION = {"python": "This is test description for the python tag."}
 
 SHARE = True
 
