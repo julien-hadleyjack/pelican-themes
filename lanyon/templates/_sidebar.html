@@ -1,0 +1,36 @@
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  {% if SITESUBTITLE %}
+  <div class="sidebar-item">
+    <p>{{ SITESUBTITLE }}</p>
+  </div>
+  {% endif %}
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item{% if page_name == "index" %} active{% endif %}" href="{{ SITEURL }}/">Home</a>
+
+    {% if DISPLAY_PAGES_ON_MENU %}
+	{% for pg in PAGES %}
+	<a class="sidebar-nav-item{% if pg == page %} active{% endif %}" href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a>
+	{% endfor %}
+	{% endif %}
+	
+	{% if DISPLAY_CATEGORIES_ON_MENU %}
+	{% for cat, _ in categories %}
+	<a class="sidebar-nav-item{% if cat == page %} active{% endif %}" href="{{ SITEURL }}/{{ cat.url }}">{{ cat.name }}</a>
+	{% endfor %}
+	{% endif %}
+  </nav>
+
+  {% if COPYRIGHT_YEAR %}
+  <div class="sidebar-item">
+    <p>
+      &copy; {{ COPYRIGHT_YEAR }}. All rights reserved.
+    </p>
+  </div>
+  {% endif %}
+</div>

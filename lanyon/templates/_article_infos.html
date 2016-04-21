@@ -1,0 +1,16 @@
+<center>
+<p class="post-meta">
+<time datetime="{{ article.date }}" itemprop="datePublished">{{ article.date|strftime("%b %-d, %Y") }}</time>
+</p>
+
+{% for author in article.authors %}
+<div class="">
+<center><p><strong>
+<span class="authorKeyword">Author</span>
+<span class="small-site-title">
+<h2 style="letter-spacing: 3px !important; text-transform: uppercase !important;">{{author}}</h2>
+</span></strong></p></center>
+
+</div>
+{% endfor %}
+</center>
