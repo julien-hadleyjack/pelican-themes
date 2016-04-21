@@ -4,9 +4,7 @@ Date: 2016-04-20 10:14
 Category: Demonstration
 Author: Julien Hadley Jack
 Slug: markdown-overview
-Summary:
-  The result of different markdown elements in the current theme.
-  You can see which elements have a corresponding CSS style.
+Summary: The result of different markdown elements in the current theme. You can see which elements have a corresponding CSS style.
 
 Examples from [Daring Fireball](http://daringfireball.net/projects/markdown/syntax)
 
